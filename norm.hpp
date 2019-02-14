@@ -1,5 +1,5 @@
 template <typename T>
-double norm<T>::operator()(const std::vector<cylindricalNum<T>>& set)const
+double norm::operator()(const std::vector<T>& set)const
 {
     double total_magnitude;
     
@@ -10,3 +10,4 @@ double norm<T>::operator()(const std::vector<cylindricalNum<T>>& set)const
 
     return total_magnitude;
 }
+

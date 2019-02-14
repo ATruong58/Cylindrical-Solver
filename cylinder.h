@@ -13,15 +13,14 @@
 #include <iostream>
 #include <cmath>
 #include <string>
-#include <vector>
 
 template <class T>
 class cylindricalNum
 {
     private:
-        T r;
-        T theta;
-        T z_axis;
+        T m_r;
+        T m_theta;
+        T m_z;
 
     public:
         cylindricalNum(){}
@@ -35,16 +34,24 @@ class cylindricalNum
         cylindricalNum<T> operator!()const;
         
         double operator~()const;
-        T operator[](int index);
+        T& operator[](int index);
+        T operator[](int index)const;
         bool operator>(const cylindricalNum<T> &source)const;
         bool operator<(const cylindricalNum<T> &source)const;
         bool operator==(const cylindricalNum<T> &source)const;
         std::string cartesian()const;
 
-        template <typename U>
-        friend std::ostream& operator<<(std::ostream& os, cylindricalNum<U> obj);
+
+
 
 };
+
+        template <typename U>
+        std::ostream& operator<<(std::ostream& os, const cylindricalNum<U> &obj);
+        
+        template <typename U>
+        std::istream& operator>>(std::istream& in, const cylindricalNum<U> &obj);
+
 
 #include "cylinder.hpp"
 

@@ -1,13 +1,14 @@
 #ifndef NORM_H
 #define NORM_H
 
-#include "cylinder.h"
+#include <vector>
 
-template <class T>
 class norm
 {
     public: 
-        double operator()(const std::vector<cylindricalNum<T>>& set)const;
+
+        template <typename T>
+        double operator()(const std::vector<T>& set)const;
 
 };
 
