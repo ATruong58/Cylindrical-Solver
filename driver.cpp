@@ -1,8 +1,6 @@
-#include "cylinder.h"
+#include "norm.h"
 
 int main(){
-
-    cylindricalNum<int> p;
 
     return 0;
 }
