@@ -50,7 +50,7 @@ class cylindricalNum
         std::ostream& operator<<(std::ostream& os, const cylindricalNum<U> &obj);
         
         template <typename U>
-        std::istream& operator>>(std::istream& in, const cylindricalNum<U> &obj);
+        std::istream& operator>>(std::istream& in, cylindricalNum<U> &obj);
 
 
 #include "cylinder.hpp"

@@ -98,27 +98,26 @@ T cylindricalNum<T>::operator[](int index)const
 template <typename T>
 bool cylindricalNum<T>::operator>(const cylindricalNum<T> &source)const
 {
-    cylindricalNum<T> p = this;
-    return(~p > ~source);
+    return(~*this > ~source);
 }
 
 template <typename T>
 bool cylindricalNum<T>::operator<(const cylindricalNum<T> &source)const
 {
-    return(~this < ~source);
+    return(~*this < ~source);
 }
 
 template <typename T>
 bool cylindricalNum<T>::operator==(const cylindricalNum<T> &source)const
 {
-    return(m_r == source.m_r && m_theta == source.m_theta && m_z == source.m_z);
+    return((abs(~this) - abs(~source)) < 0.005);
 }
 
 template <typename T>
 std::string cylindricalNum<T>::cartesian()const
 {
-    double x = r * cos(m_theta);
-    double y = r * sin(m_theta);
+    double x = m_r * cos(m_theta);
+    double y = m_r * sin(m_theta);
     return("(" + std::to_string(x) + "," + std::to_string(y) + "," + std::to_string(m_z) + ")");    
 }
 
@@ -130,7 +129,7 @@ std::ostream& operator<<(std::ostream& os, const cylindricalNum<T> &obj)
 }
 
 template <typename T>
-std::istream& operator>>(std::istream& in, const cylindricalNum<T> &obj)
+std::istream& operator>>(std::istream& in, cylindricalNum<T> &obj)
 {
     in >> obj[0] >> obj[1] >> obj[2];
     return in;
