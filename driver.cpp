@@ -43,7 +43,7 @@ int main(int argc,  char * argv[])
     }
     catch (std::string message)
     {
-        std::cout << message << std::endl;
+        std::cerr << message << std::endl;
     }
 
     return 0;

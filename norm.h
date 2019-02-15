@@ -1,3 +1,8 @@
+// Name: 
+// Pre: 
+// Post: 
+// Description: 
+
 #ifndef NORM_H
 #define NORM_H
 
