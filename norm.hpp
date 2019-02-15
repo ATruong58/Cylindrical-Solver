@@ -1,3 +1,11 @@
+/////////////////////////////////////////////////////////
+//   Name: Alan Truong                                 //
+//   Date: 2/12/2019                                   //
+//   Course: Object Orient Numerical Method            //
+//   File: norm.hpp                                    //
+//                                                     //
+/////////////////////////////////////////////////////////
+
 template <typename T>
 double norm::operator()(const std::vector<T>& set)const
 {
